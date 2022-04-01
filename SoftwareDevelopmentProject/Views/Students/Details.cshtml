@@ -1,0 +1,79 @@
+﻿@model SoftwareDevelopmentProject.Models.tbl_students
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-5" style="max-width:750px;margin:auto;">
+        <div>
+            <h4 class="text-center mt-2 my-2">Student Details</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_registration)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_registration)
+                </dd>
+
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_admission_year)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_admission_year)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_semester11)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_semester11)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_semester22)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_semester22)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_semester33)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.st_semester33)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_studyCenter.study_center_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_studyCenter.study_center_name)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.st_registration }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

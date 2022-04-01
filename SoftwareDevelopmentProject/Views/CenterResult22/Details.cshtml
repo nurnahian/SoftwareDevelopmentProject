@@ -1,0 +1,115 @@
+﻿@model SoftwareDevelopmentProject.Models.tbl_result22
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCenter.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_result22</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.experment_mark1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.experment_mark1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.book_mark2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.book_mark2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.viva_mark3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.viva_mark3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tma_mark1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tma_mark1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tma_mark2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tma_mark2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_practical_mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_practical_mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_tma_mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_tma_mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.exam_term)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.exam_term)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.st_study_center)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.st_study_center)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.submit_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.submit_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_semester22_subject.s22_course_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_semester22_subject.s22_course_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_students.st_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_students.st_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.result22_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,115 @@
+﻿@model SoftwareDevelopmentProject.Models.tbl_students
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield; /* Firefox */
+    }
+</style>
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="form-horizontal bg-transparent border mt-5" style="max-width:550px;margin:auto;">
+
+            <div class="form-horizontal">
+                <h4 class="text-center mt-2 my-2">Create Student</h4>
+                <div class="text-danger bg-warning text-center">Student ID Not Editable</div>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_registration, htmlAttributes: new { @class = "control-label col-md-2 mt-2 my-2" })
+                    <div class="col-md-12 border">
+                        @Html.DisplayFor(model => model.st_registration, new { htmlAttributes = new { @class = "form-control"} })
+                        @Html.ValidationMessageFor(model => model.st_registration, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                @Html.HiddenFor(model => model.st_registration)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_name, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.st_name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.st_name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_admission_year, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.st_admission_year, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.st_admission_year, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_semester11, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.st_semester11)
+                            @Html.ValidationMessageFor(model => model.st_semester11, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_semester22, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.st_semester22)
+                            @Html.ValidationMessageFor(model => model.st_semester22, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_semester33, htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.st_semester33)
+                            @Html.ValidationMessageFor(model => model.st_semester33, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.st_study_center_code, "st_study_center_code", htmlAttributes: new { @class = "control-label col-md-6 mt-2 my-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("st_study_center_code", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.st_study_center_code, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default btn-outline-success mt-3 my-3" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

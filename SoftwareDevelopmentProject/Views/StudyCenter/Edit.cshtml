@@ -1,0 +1,56 @@
+﻿@model SoftwareDevelopmentProject.Models.tbl_studyCenter
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="form-horizontal bg-transparent border mt-5" style="max-width:550px;margin:auto;">
+
+            <div class="form-horizontal">
+                <h4 class="text-center mt-2 my-2">Edit Study Center Info</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @*<div class="form-group">
+                        @Html.LabelFor(model => model.study_center_id, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.study_center_id, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.study_center_id, "", new { @class = "text-danger" })
+                        </div>
+                    </div>*@
+
+                @Html.HiddenFor(model => model.study_center_code)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.study_center_name, htmlAttributes: new { @class = "control-label col-md-6" })
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.study_center_name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.study_center_name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default btn-outline-dark mt-3 my-3" />
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }

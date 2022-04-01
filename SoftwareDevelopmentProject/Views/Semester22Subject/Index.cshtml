@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SoftwareDevelopmentProject.Models.tbl_semester22_subject>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.s22_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.s22_course_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.s22_course_credit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.s22_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.s22_course_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.s22_course_credit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.s22_course_code }) |
+            @Html.ActionLink("Details", "Details", new { id=item.s22_course_code }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.s22_course_code })
+        </td>
+    </tr>
+}
+
+</table>

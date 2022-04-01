@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5a869b656edf41ed9701fd47d373ffe4" Name="Diagram1">
+        <EntityTypeShape EntityType="DBdcsaModel.sysdiagram" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_final_result11" Width="1.5" PointX="7.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_final_result22" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_final_result33" Width="1.5" PointX="10.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_final_result33_project" Width="1.5" PointX="10.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_result11" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_result22" Width="1.5" PointX="8.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_result33" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_result33_project" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_semester11_subject" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_semester22_subject" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_semester33_project" Width="1.5" PointX="2.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_semester33_subject" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_students" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_studyCenter" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBdcsaModel.tbl_users" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result11_tbl_semester11_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result11_tbl_students" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result22_tbl_semester22_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result22_tbl_students" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result33_tbl_semester33_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result33_tbl_students" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result33_project_tbl_semester33_subject" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_result33_project_tbl_students" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_students_tbl_studyCenter1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBdcsaModel.FK_tbl_users_tbl_studyCenter" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
