@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutCenter.cshtml";
+}
+
+<h1 class="text-center mt-3">Import 3rd Semester Result</h1>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="bg-transparent border mt-5" style="max-width:650px;margin:auto;">
+            <h3 class="bg-danger shadow-1-strong text-center">Be Careful import file formate must be CSV</h3>
+            <div style="margin: auto;">
+                <div class="m-4">
+                    <div class="input-group">
+                        <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="form-control">
+                        <button type="button" class="btn btn-info btn-outline-dark">Upload</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

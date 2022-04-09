@@ -17,13 +17,15 @@ namespace SoftwareDevelopmentProject.Controllers
         // GET: CenterResult11
         public ActionResult Index()
         {
+            var st = Convert.ToInt32(Session["Ucenter"]);
             var tbl_result11 = db.tbl_result11.Include(t => t.tbl_semester11_subject).Include(t => t.tbl_students);
-            //var st = 810;//Session["810"];
+
+            var CenterResult = db.tbl_result11.Where(r => r.st_study_center == st).ToList();
+           
+           return View(CenterResult);
             
-            //tbl_result11.ToList().Where(m=>m.st_study_center.Equals(st));
-           return View(tbl_result11.ToList());
             //.GroupBy(m => m.st_registration)
-              // return View(tbl_result11.ToList().Where(m => m.st_study_center.Equals(st)));
+
         }
 
         // GET: CenterResult11/Details/5
@@ -44,8 +46,10 @@ namespace SoftwareDevelopmentProject.Controllers
         // GET: CenterResult11/Create
         public ActionResult Create()
         {
+
+            var st = Convert.ToInt32(Session["Ucenter"]); 
             ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_code");
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name");
+            ViewBag.st_registration = new SelectList(db.tbl_students.Where(s => s.st_semester11 == true && s.st_study_center_code == st), "st_registration", "st_registration");
             return View();
         }
 
@@ -68,7 +72,7 @@ namespace SoftwareDevelopmentProject.Controllers
             }
 
             ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_code", tbl_result11.s11_course_code);
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name", tbl_result11.st_registration);
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration", tbl_result11.st_registration);
             return View(tbl_result11);
         }
 

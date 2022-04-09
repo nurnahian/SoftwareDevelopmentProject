@@ -5,109 +5,119 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>tbl_result33</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.experment_mark1)
-        </dt>
+<h2 class="text-center mt-3">1st Semester Student Result Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.experment_mark1)
-        </dd>
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-5" style="max-width:750px;margin:auto;">
+        <div>
+            <h4 class="text-center mt-2 my-2">Student Subject Result</h4>
+            <hr />
+            <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.book_mark2)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_students.st_registration)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.book_mark2)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_students.st_registration)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_students.st_name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.viva_mark3)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_students.st_name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.viva_mark3)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_semester33_subject.s33_course_name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tma_mark1)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_semester33_subject.s33_course_name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.tma_mark1)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_study_center)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tma_mark2)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.st_study_center)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.tma_mark2)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tma_mark1)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.total_practical_mark)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.tma_mark1)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.total_practical_mark)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tma_mark2)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.total_tma_mark)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.tma_mark2)
+                </dd>
+                <dt class="bg-warning">
+                    @Html.DisplayNameFor(model => model.total_tma_mark)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.total_tma_mark)
-        </dd>
+                <dd class="bg-warning">
+                    @Html.DisplayFor(model => model.total_tma_mark)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.experment_mark1)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.exam_term)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.experment_mark1)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.exam_term)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.book_mark2)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.st_study_center)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.book_mark2)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.st_study_center)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.viva_mark3)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.submit_date)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.viva_mark3)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.submit_date)
-        </dd>
+                <dt class="bg-info">
+                    @Html.DisplayNameFor(model => model.total_practical_mark)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tbl_semester33_subject.s33_course_name)
-        </dt>
+                <dd class="bg-info">
+                    @Html.DisplayFor(model => model.total_practical_mark)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.tbl_semester33_subject.s33_course_name)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.exam_term)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tbl_students.st_name)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.exam_term)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.tbl_students.st_name)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.submit_date)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.submit_date)
+                </dd>
+            </dl>
+        </div>  
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.result33_id }) |

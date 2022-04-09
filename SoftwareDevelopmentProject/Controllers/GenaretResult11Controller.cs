@@ -18,23 +18,17 @@ namespace SoftwareDevelopmentProject.Controllers
         public ActionResult Index()
         {
             var tbl_result11 = db.tbl_result11.Include(t => t.tbl_semester11_subject).Include(t => t.tbl_students);
-            //var se=TempData["cen"];
-            //List<tbl_result11> tbl_Result11 = db.tbl_result11.Where(r => r.st_study_center.Value(n=>n.)).ToList();
-            //db.tbl_result11.SqlQuery("Select * from tbl_result11 where st_study_center'" + cen + "'").ToList();
-            //db.tbl_result11.ToList();
-            var c = db.tbl_result11.ToList();
-            return View(c);
+            
+            var result11 = db.tbl_result11.ToList();
+            return View(result11);
         }
-        public ActionResult GetList()
-        {
-            var tbl_result11 = db.tbl_result11.Include(t => t.tbl_semester11_subject).Include(t => t.tbl_students);
-            //var se=TempData["cen"];
-            //List<tbl_result11> tbl_Result11 = db.tbl_result11.Where(r => r.st_study_center.Value(n=>n.)).ToList();
-            //db.tbl_result11.SqlQuery("Select * from tbl_result11 where st_study_center'" + cen + "'").ToList();
-            //db.tbl_result11.ToList();
-            var c = db.tbl_result11.ToList();
-            return View(c);
-        }
+        //public ActionResult GetList()
+        //{
+        //    var tbl_result11 = db.tbl_result11.Include(t => t.tbl_semester11_subject).Include(t => t.tbl_students);
+            
+        //    var c = db.tbl_result11.ToList();
+        //    return View(c);
+        //}
         
     }
 }

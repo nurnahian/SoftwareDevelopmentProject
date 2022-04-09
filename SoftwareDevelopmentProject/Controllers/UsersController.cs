@@ -18,8 +18,8 @@ namespace SoftwareDevelopmentProject.Controllers
         public ActionResult Index()
         {
             var tbl_users = db.tbl_users.Include(t => t.tbl_studyCenter);
-            TempData["cen"] = "890";
-            return View(tbl_users.ToList());
+            var c = tbl_users.ToList();            
+            return View(c);
         }
 
         // GET: Users/Details/5

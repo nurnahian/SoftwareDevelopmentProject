@@ -11,21 +11,47 @@ namespace SoftwareDevelopmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_result22
     {
         public int result22_id { get; set; }
+        [Display(Name = "Student ID ")]
         public string st_registration { get; set; }
+        [Display(Name = "Course Code ")]
         public string s22_course_code { get; set; }
+        [Required(ErrorMessage = "Please enter Experiment Mark.")]
+        [Display(Name = "Experiment Mark ")]
+        [Range(0, 10)]
         public Nullable<int> experment_mark1 { get; set; }
+        [Required(ErrorMessage = "Please enter Book Mark.")]
+        [Display(Name = "Record Book mark ")]
+        [Range(0, 5)]
         public Nullable<int> book_mark2 { get; set; }
+        [Required(ErrorMessage = "Please enter Viva Mark.")]
+        [Display(Name = "Viva Mark ")]
+        [Range(0, 5)]
         public Nullable<int> viva_mark3 { get; set; }
+        [Required(ErrorMessage = "Please enter TMA Mark.")]
+        [Display(Name = "TMA Mark 1 ")]
+        [Range(0, 5)]
         public Nullable<int> tma_mark1 { get; set; }
+        [Required(ErrorMessage = "Please enter TMA Mark.")]
+        [Display(Name = "TMA Mark 2 ")]
+        [Range(0, 5)]
         public Nullable<int> tma_mark2 { get; set; }
+        [Display(Name = "Total Practical Mark ")]
+        [Range(0, 20)]
         public Nullable<int> total_practical_mark { get; set; }
+        [Display(Name = "Total TMA Mark ")]
+        [Range(0, 10)]
         public Nullable<int> total_tma_mark { get; set; }
+        [Required(ErrorMessage = "Please enter Exam Term")]
+        [Display(Name = "Exam Term ")]
         public string exam_term { get; set; }
+        [Display(Name = "Center Code ")]
         public Nullable<int> st_study_center { get; set; }
+        [Display(Name = "Submit Date ")]
         public Nullable<System.DateTime> submit_date { get; set; }
     
         public virtual tbl_semester22_subject tbl_semester22_subject { get; set; }

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutCenter.cshtml";
 }
 
-<h2>First Semester Result</h2>
+<h2 class="text-center mt-3">1st Semester Result</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info btn-outline-dark" })
@@ -16,10 +16,10 @@
             No
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tbl_students.st_name)
+            @Html.DisplayNameFor(model => model.tbl_students.st_registration)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tbl_students.st_registration)
+            @Html.DisplayNameFor(model => model.tbl_students.st_name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.tbl_semester11_subject.s11_course_code)
@@ -33,7 +33,7 @@
         <th>
             @Html.DisplayNameFor(model => model.total_tma_mark)
         </th>
-        <th>
+        <th >
             @Html.DisplayNameFor(model => model.experment_mark1)
         </th>
         <th>

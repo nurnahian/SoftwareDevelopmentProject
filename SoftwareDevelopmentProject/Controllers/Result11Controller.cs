@@ -25,11 +25,8 @@ namespace SoftwareDevelopmentProject.Controllers
         {
             
             var tbl_result11 = db.tbl_result11.Include(t => t.tbl_semester11_subject).Include(t => t.tbl_students);
-            //var se=TempData["cen"];
-            //List<tbl_result11> tbl_Result11 = db.tbl_result11.Where(r => r.st_study_center.Value(n=>n.)).ToList();
-            //db.tbl_result11.SqlQuery("Select * from tbl_result11 where st_study_center'" + cen + "'").ToList();
-            //db.tbl_result11.ToList();
-           var c = db.tbl_result11.ToList();
+            //var s =Convert.ToInt32(Session["log"]);
+            var c = db.tbl_result11.ToList();//.Where(r=>r.st_study_center==s)
             return View(c);
         }
 
@@ -51,7 +48,7 @@ namespace SoftwareDevelopmentProject.Controllers
         // GET: Result11/Create
         public ActionResult Create()
         {
-            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_name");
+            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_code");
             ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration");
             
             return View();
@@ -75,8 +72,8 @@ namespace SoftwareDevelopmentProject.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_name", tbl_result11.s11_course_code);
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name", tbl_result11.st_registration);
+            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_code", tbl_result11.s11_course_code);
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration", tbl_result11.st_registration);
             return View(tbl_result11);
         }
 
@@ -92,8 +89,8 @@ namespace SoftwareDevelopmentProject.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_name", tbl_result11.s11_course_code);
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name", tbl_result11.st_registration);
+            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_code", tbl_result11.s11_course_code);
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration", tbl_result11.st_registration);
             return View(tbl_result11);
         }
 
@@ -110,8 +107,8 @@ namespace SoftwareDevelopmentProject.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_name", tbl_result11.s11_course_code);
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name", tbl_result11.st_registration);
+            ViewBag.s11_course_code = new SelectList(db.tbl_semester11_subject, "s11_course_code", "s11_course_code", tbl_result11.s11_course_code);
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration", tbl_result11.st_registration);
             return View(tbl_result11);
         }
 

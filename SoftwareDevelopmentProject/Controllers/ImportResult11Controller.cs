@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace SoftwareDevelopmentProject.Controllers
 {
-    public class TeacherController : Controller
+    public class ImportResult11Controller : Controller
     {
-        // GET: Teacher
+        // GET: ImportResult11
         public ActionResult Index()
         {
             return View();

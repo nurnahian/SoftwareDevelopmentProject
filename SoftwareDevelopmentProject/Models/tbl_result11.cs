@@ -25,7 +25,7 @@ namespace SoftwareDevelopmentProject.Models
         [Range(0,10)]
         public Nullable<int> experment_mark1 { get; set; }
         [Required(ErrorMessage = "Please enter Book Mark.")]
-        [Display(Name = "Book Mark ")]
+        [Display(Name = "Record Book mark ")]
         [Range(0,5)]
         public Nullable<int> book_mark2 { get; set; }
         [Required(ErrorMessage = "Please enter Viva Mark.")]
@@ -41,8 +41,10 @@ namespace SoftwareDevelopmentProject.Models
         [Range(0, 5)]
         public Nullable<int> tma_mark2 { get; set; }
         [Display(Name = "Total Practical Mark ")]
+        [Range(0, 20)]
         public Nullable<int> total_practical_mark { get; set; }
         [Display(Name = "Total TMA Mark ")]
+        [Range(0, 10)]
         public Nullable<int> total_tma_mark { get; set; }
         [Required(ErrorMessage = "Please enter Exam Term")]
         [Display(Name = "Exam Term ")]

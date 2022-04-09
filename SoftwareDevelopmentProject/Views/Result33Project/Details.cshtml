@@ -5,69 +5,78 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2 class="text-center mt-3">3rd Semester Student Project Works Result Details</h2>
 
-<div>
-    <h4>tbl_result33_project</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.project_report)
-        </dt>
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-5" style="max-width:750px;margin:auto;">
+        <div>
+            <h4 class="text-center mt-2 my-2">Student Subject Result</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_students.st_registration)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.project_report)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_students.st_registration)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_students.st_name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.viva)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_students.st_name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.viva)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.tbl_semester33_subject.s33_course_name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.exam_term)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.tbl_semester33_subject.s33_course_name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.exam_term)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.st_study_center)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.st_study_center)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.st_study_center)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.st_study_center)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.project_report)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.submit_date)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.project_report)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.submit_date)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.viva)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tbl_semester33_subject.s33_course_name)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.viva)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.tbl_semester33_subject.s33_course_name)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.exam_term)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tbl_students.st_name)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.exam_term)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.submit_date)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tbl_students.st_name)
-        </dd>
-
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.submit_date)
+                </dd>
+            </dl>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.result33_project_id }) |

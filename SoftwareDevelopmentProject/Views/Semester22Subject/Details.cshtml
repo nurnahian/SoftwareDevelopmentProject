@@ -5,39 +5,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<<h2 class="text-center mt-3">Semester Subject Details</h2>
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-5" style="max-width:750px;margin:auto;">
+        <div>
+            <h4>Semester Subject</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.s22_id)
+                </dt>
 
-<div>
-    <h4>tbl_semester22_subject</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.s22_id)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.s22_id)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.s22_id)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.s22_course_name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.s22_course_name)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.s22_course_name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.s22_course_name)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.s22_course_credit)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.s22_course_credit)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.s22_course_credit)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.s22_course_credit)
-        </dd>
-
-    </dl>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.s22_course_code }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.s22_course_code }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -131,13 +131,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CenterController.cs" />
     <Compile Include="Controllers\CenterResult11Controller.cs" />
     <Compile Include="Controllers\CenterResult22Controller.cs" />
     <Compile Include="Controllers\CenterResult33Controller.cs" />
     <Compile Include="Controllers\CenterResult33ProjectController.cs" />
+    <Compile Include="Controllers\ExportCenterResult11Controller.cs" />
+    <Compile Include="Controllers\ExportCenterResult22Controller.cs" />
+    <Compile Include="Controllers\ExportCenterResult33Controller.cs" />
+    <Compile Include="Controllers\ExportCenterResult33ProjectController.cs" />
     <Compile Include="Controllers\GenaretResult11Controller.cs" />
     <Compile Include="Controllers\GenaretResult22Controller.cs" />
+    <Compile Include="Controllers\GenaretResult33Controller.cs" />
+    <Compile Include="Controllers\GenaretResult33ProjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportResult11Controller.cs" />
+    <Compile Include="Controllers\ImportResult22Controller.cs" />
+    <Compile Include="Controllers\ImportResult33Controller.cs" />
+    <Compile Include="Controllers\ImportResult33ProjectController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\Result11Controller.cs" />
     <Compile Include="Controllers\Result22Controller.cs" />
     <Compile Include="Controllers\Result33Controller.cs" />
@@ -147,7 +159,6 @@
     <Compile Include="Controllers\Semester33SubjectController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\StudyCenterController.cs" />
-    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\UplodeFileController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -398,10 +409,12 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\log.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bouLogo.png" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -578,32 +591,35 @@
     <Content Include="Views\Result33Project\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutCenter.cshtml" />
     <Content Include="Views\UplodeFile\Index.cshtml" />
-    <Content Include="Views\Teacher\Index.cshtml" />
     <Content Include="Views\CenterResult11\Create.cshtml" />
-    <Content Include="Views\CenterResult11\Delete.cshtml" />
     <Content Include="Views\CenterResult11\Details.cshtml" />
-    <Content Include="Views\CenterResult11\Edit.cshtml" />
     <Content Include="Views\CenterResult11\Index.cshtml" />
     <Content Include="Views\CenterResult22\Create.cshtml" />
-    <Content Include="Views\CenterResult22\Delete.cshtml" />
     <Content Include="Views\CenterResult22\Details.cshtml" />
-    <Content Include="Views\CenterResult22\Edit.cshtml" />
     <Content Include="Views\CenterResult22\Index.cshtml" />
     <Content Include="Views\CenterResult33\Create.cshtml" />
-    <Content Include="Views\CenterResult33\Delete.cshtml" />
     <Content Include="Views\CenterResult33\Details.cshtml" />
-    <Content Include="Views\CenterResult33\Edit.cshtml" />
     <Content Include="Views\CenterResult33\Index.cshtml" />
     <Content Include="Views\CenterResult33Project\Create.cshtml" />
-    <Content Include="Views\CenterResult33Project\Delete.cshtml" />
     <Content Include="Views\CenterResult33Project\Details.cshtml" />
-    <Content Include="Views\CenterResult33Project\Edit.cshtml" />
     <Content Include="Views\CenterResult33Project\Index.cshtml" />
     <Content Include="Views\GenaretResult11\Index.cshtml" />
+    <Content Include="Views\ExportCenterResult11\Index.cshtml" />
+    <Content Include="Views\ExportCenterResult22\Index.cshtml" />
+    <Content Include="Views\ExportCenterResult33\Index.cshtml" />
+    <Content Include="Views\ImportResult11\Index.cshtml" />
+    <Content Include="Views\ImportResult22\Index.cshtml" />
+    <Content Include="Views\ImportResult33\Index.cshtml" />
+    <Content Include="Views\ImportResult33Project\Index.cshtml" />
+    <Content Include="Views\Log\Index.cshtml" />
+    <Content Include="Views\Center\Index.cshtml" />
+    <Content Include="Views\ExportCenterResult33Project\Index.cshtml" />
+    <Content Include="Views\GenaretResult22\Index.cshtml" />
+    <Content Include="Views\GenaretResult33\Index.cshtml" />
+    <Content Include="Views\GenaretResult33Project\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GenaretResult22\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

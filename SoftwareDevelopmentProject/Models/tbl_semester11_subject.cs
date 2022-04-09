@@ -22,10 +22,15 @@ namespace SoftwareDevelopmentProject.Models
         }
     
         public int s11_id { get; set; }
+        [Required(ErrorMessage = "Please enter Course Code.")]
         [Display(Name = "Course Code ")]
+        [RegularExpression("[CSE]{3}[0-9]{4}", ErrorMessage = "Please enter Course Code Correctly!")]
         public string s11_course_code { get; set; }
-        [Display(Name = "Course Code Name ")]
+        [Required(ErrorMessage = "Please enter Course Code Name.")]
+        [Display(Name = "Course Name ")]
         public string s11_course_name { get; set; }
+        [Required(ErrorMessage = "Please enter Course Credit.")]
+        [Display(Name = "Course Credit ")]
         public string s11_course_credit { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -19,7 +19,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="@Url.Action("Index","Teacher")">Center Dashboard</a>
+        <a class="navbar-brand ps-3" href="@Url.Action("Index","Center")">Center Dashboard</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -35,9 +35,13 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     @*<li><a class="dropdown-item" href="#!">Settings</a></li>
-                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                    <li><hr class="dropdown-divider" /></li>*@
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+        <li><hr class="dropdown-divider" /></li>*@
+                    @*<li><a class="dropdown-item" href="#!">Logout</a></li>*@
+                    @if (Session["Uname"] != null)
+                    {
+                <li><a class="dropdown-item" href="@Url.Action("Logout", "Log")">Logout</a></li>
+}
                 </ul>
             </li>
         </ul>
@@ -48,7 +52,7 @@
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="@Url.Action("Index","Teacher")">
+                        <a class="nav-link" href="@Url.Action("Index","Center")">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
@@ -63,85 +67,44 @@
                                 <a class="nav-link" href="@Url.Action("Index","CenterResult11")">1st Semester Result</a>
                                 <a class="nav-link" href="@Url.Action("Index","CenterResult22")">2nd Semester Result</a>
                                 <a class="nav-link" href="@Url.Action("Index","CenterResult33")">3rd Semester Result</a>
-                                <a class="nav-link" href="@Url.Action("Index","CenterResult33Project")">3rd Semester Result</a>
-                                @*<a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>*@
+                                <a class="nav-link" href="@Url.Action("Index","CenterResult33Project")">Project Work Result</a>
+                                
                             </nav>
                         </div>
-
-                        @*start courses section*@
-                        @*<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCourses" aria-expanded="false" aria-controls="collapseCourses ">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Courses
+                        <div class="sb-sidenav-menu-heading">Result Genaret</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseResultGenaret" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-poll-h"></i></div>
+                            Result Report
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="collapseCourses" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapseResultGenaret" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="@Url.Action("Index","Semester11Subject")">1st Semester Course</a>
-                                <a class="nav-link" href="@Url.Action("Index","Semester22Subject")">2nd Semester Course</a>
-                                <a class="nav-link" href="@Url.Action("Index","Semester33Subject")">3rd Semester Course</a>
-                            </nav>
-                        </div>*@
-
-                        @*courses*@
-
-
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
-                            Utility
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Authentication
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="#">
-                                            <div class="sb-nav-link-icon"><i class="fas fa-university"></i></div>
-                                            Login
-                                        </a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
-                                    </nav>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                    Error
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="401.html">401 Page</a>
-                                        <a class="nav-link" href="404.html">404 Page</a>
-                                        <a class="nav-link" href="500.html">500 Page</a>
-                                    </nav>
-                                </div>
+                                <a class="nav-link" href="@Url.Action("Index","ExportCenterResult11")">1st Semester Result</a>
+                                <a class="nav-link" href="@Url.Action("Index","ExportCenterResult22")">2nd Semester Result</a>
+                                <a class="nav-link" href="@Url.Action("Index","ExportCenterResult33")">3rd Semester Result</a>
+                                <a class="nav-link" href="@Url.Action("Index","ExportCenterResult33Project")">Project Work Result</a>                                
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Adition</div>
-                        @*<a class="nav-link" href="@Url.Action("Index","Users")">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            User
-                        </a>
-                        <a class="nav-link" href="@Url.Action("Index","StudyCenter")">
-                            <div class="sb-nav-link-icon"><i class="fas fa-university"></i></div>
-                            Study Center
-                        </a>
-                        <a class="nav-link" href="@Url.Action("Index","Students")">
-                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
-                            Students
-                        </a>*@
-
-                        <a class="nav-link" href="">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseResultFile" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-file-pdf"></i></div>
-                            Files
+                            Files Import
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <div class="collapse" id="collapseResultFile" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="@Url.Action("Index","ImportResult11")">1st Semester Result</a>
+                                <a class="nav-link" href="@Url.Action("Index","ImportResult22")">2nd Semester Result</a>
+                                <a class="nav-link" href="@Url.Action("Index","ImportResult33")">3rd Semester Result</a>
+                                <a class="nav-link" href="@Url.Action("Index","ImportResult33Project")">Project Work Result</a>                                
+                            </nav>
+                        </div>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    Teacher
+                    @Session["Uname"]
+                    
                 </div>
             </nav>
         </div>
@@ -181,48 +144,3 @@
 </html>
 
 
-
-
-
-@*<!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>@ViewBag.Title - My ASP.NET Application</title>
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-            </footer>
-        </div>
-
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
-    </body>
-    </html>*@

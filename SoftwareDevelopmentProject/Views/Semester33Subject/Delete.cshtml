@@ -5,45 +5,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2 class="text-center mt-3">Are you sure you want to delete this?</h2>
+<div class="row">
+    <div class="form-horizontal bg-transparent border mt-3" style="max-width:750px;margin:auto;">
+        <div>
+            <h4>Semester Subject</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.s33_id)
+                </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>tbl_semester33_subject</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.s33_id)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.s33_id)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.s33_id)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.s33_course_name)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.s33_course_name)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.s33_course_name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.s33_course_name)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.s33_course_credit)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.s33_course_credit)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.s33_course_credit)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.s33_course_credit)
-        </dd>
+            </dl>
 
-    </dl>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-danger mt-3 my-3" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
         </div>
-    }
-</div>
+        </div>
+    </div>

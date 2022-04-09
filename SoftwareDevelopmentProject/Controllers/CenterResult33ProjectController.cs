@@ -39,8 +39,8 @@ namespace SoftwareDevelopmentProject.Controllers
         // GET: CenterResult33Project/Create
         public ActionResult Create()
         {
-            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_name");
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name");
+            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_code");
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration");
             return View();
         }
 
@@ -51,6 +51,7 @@ namespace SoftwareDevelopmentProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "result33_project_id,st_registration,s33_course_code,project_report,viva,exam_term,st_study_center,submit_date")] tbl_result33_project tbl_result33_project)
         {
+            tbl_result33_project.submit_date = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.tbl_result33_project.Add(tbl_result33_project);
@@ -58,8 +59,8 @@ namespace SoftwareDevelopmentProject.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_name", tbl_result33_project.s33_course_code);
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name", tbl_result33_project.st_registration);
+            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_code", tbl_result33_project.s33_course_code);
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration", tbl_result33_project.st_registration);
             return View(tbl_result33_project);
         }
 
@@ -75,8 +76,8 @@ namespace SoftwareDevelopmentProject.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_name", tbl_result33_project.s33_course_code);
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name", tbl_result33_project.st_registration);
+            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_code", tbl_result33_project.s33_course_code);
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration", tbl_result33_project.st_registration);
             return View(tbl_result33_project);
         }
 
@@ -93,8 +94,8 @@ namespace SoftwareDevelopmentProject.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_name", tbl_result33_project.s33_course_code);
-            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_name", tbl_result33_project.st_registration);
+            ViewBag.s33_course_code = new SelectList(db.tbl_semester33_subject, "s33_course_code", "s33_course_code", tbl_result33_project.s33_course_code);
+            ViewBag.st_registration = new SelectList(db.tbl_students, "st_registration", "st_registration", tbl_result33_project.st_registration);
             return View(tbl_result33_project);
         }
 

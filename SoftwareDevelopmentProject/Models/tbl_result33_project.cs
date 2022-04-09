@@ -11,16 +11,29 @@ namespace SoftwareDevelopmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_result33_project
     {
         public int result33_project_id { get; set; }
+        [Display(Name = "Student ID ")]
         public string st_registration { get; set; }
+        [Display(Name = "Course Code ")]
         public string s33_course_code { get; set; }
+        [Required(ErrorMessage = "Please enter Project Report Mark.")]
+        [Display(Name = "Project Report Mark ")]
+        [Range(0, 80)]
         public Nullable<int> project_report { get; set; }
+        [Required(ErrorMessage = "Please enter Viva Mark.")]
+        [Display(Name = "Viva Mark ")]
+        [Range(0, 80)]
         public Nullable<int> viva { get; set; }
+        [Required(ErrorMessage = "Please enter Exam Term")]
+        [Display(Name = "Exam Term ")]
         public string exam_term { get; set; }
+        [Display(Name = "Center Code ")]
         public Nullable<int> st_study_center { get; set; }
+        [Display(Name = "Submit Date ")]
         public Nullable<System.DateTime> submit_date { get; set; }
     
         public virtual tbl_semester33_subject tbl_semester33_subject { get; set; }
